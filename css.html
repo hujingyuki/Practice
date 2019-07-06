@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .align-center {
+    text-align: center;
+    width: 100%;
+  }
+
+  .center-div1 {
+    position: relative;
+    height: 30px;
+  }
+
+  .center-div1 div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .center-div2 div {
+    position: absolute;
+    left: 50%;
+    width: 280px;
+    margin-left: -140px;
+  }
+
+  .clearfix::after {
+    content: " ";
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    clear: both;
+  }
+
+  .justify {
+    width: 200px;
+    height: 200px;
+    background: pink;
+    margin-bottom: 20px;
+  }
+
+  .d1 {
+    line-height: 200px;
+    vertical-align: top;
+  }
+
+  .d2 {
+    display: table;
+  }
+
+  .d2 p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .d3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .d4 {
+    position: relative;
+  }
+
+  .d4 div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .center-both1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: blueviolet;
+    margin-bottom: 20px;
+  }
+
+  .center-both2 {
+    display: grid;
+    height: 100px;
+    background: yellowgreen;
+  }
+
+  .center-both2 div {
+    margin: auto;
+  }
+
+  .float-father {
+    background: pink;
+    width: 100px;
+  }
+
+  .float-father div {
+    float: left;
+    background: green;
+    height: 50px;
+    width: 50px;
+  }
+
+  .trangle {
+    background: pink;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid navy;
+  }
+</style>
+
+<body>
+  <h1>水平居中</h1>
+  <div class="align-center">
+    <span>内联元素： text-align:center</span>
+  </div>
+  <div class="align-center">
+    <span>内联元素： margin:0 auto;</span>
+  </div>
+  <div class="center-div1">
+    <div>块级元素： 不定宽（relative+absolute）</div>
+  </div>
+  <div class="center-div2">
+    <div>块级元素： 定宽（relative+负margin）</div>
+  </div>
+
+  <h1>垂直居中</h1>
+  <div class="justify d1">
+    <span>inline: height + line-height</span>
+  </div>
+  <div class="justify d2">
+    <p>display:table</p>
+  </div>
+  <div class="justify d3">
+    <p>flex</p>
+  </div>
+  <div class="justify d4">
+    <div>absolute</div>
+  </div>
+
+  <h1>水平垂直居中</h1>
+  <div class="center-both1">
+    <div>flex</div>
+  </div>
+  <div class="center-both2">
+    <div>grid</div>
+  </div>
+
+  <h1>清除浮动</h1>
+  <div class="float-father clearfix">
+    <div>:after</div>
+  </div>
+
+  <h1>三角形</h1>
+  <div class="trangle"></div>
+</body>
+
+</html>
